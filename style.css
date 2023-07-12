@@ -1,0 +1,167 @@
+@import url(variables.css);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #000;
+    color:#fff;
+    font-family: 'Franklin Gothic Medium';
+}
+a{
+    color: #fff;
+}
+header{
+    display: inline-block;
+    align-items: center;
+    padding: 40px 40px 40px 100px;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    position: fixed;
+    top:0;
+    z-index: 2;
+}
+
+
+@media (max-width: 750px) {
+    header{
+        margin: 0 auto;
+        padding-left: 25px ;
+        width: 100%;
+    }
+    .nav-right{
+        display: block;
+        padding: 0 auto;
+        margin: 0 auto;
+        margin-right: -20px;
+    }
+    .nav-right a{
+        float: right;
+        position: relative;
+    }
+    section .content-outer{
+        border: red solid;
+        top: 8rem;
+        z-index: 1;
+    }
+    section .content{
+        position: relative;
+        align-items: center;
+    }
+}
+nav .brand{
+    float: left;
+}
+.nav-right{
+    display: block;
+    text-shadow: 7px 9px 11px rgb(0, 89, 255);
+    font-size: 14px;
+    top: -30px;
+    float: right;
+}
+
+.nav-right a{
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 13px;
+    position: relative;
+}
+.nav-right a:before{
+    content: '';
+    width: 0;
+    right:0;
+    bottom:-3px;
+    height: 2px;
+    background-color: var(--pure);
+    position: absolute;
+    transition: width .2s linear;
+}
+.nav-right a:hover:before{
+    right: initial;
+    left:0;
+    width: 100%;
+}
+
+section{
+    min-height: 100vh;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+section div.content-outer{
+    flex-grow: 1;
+    width: 100%;
+    margin-left: 40px;
+    margin-bottom: 15px;
+    position: relative;
+}
+section.active div.content{
+    opacity: 1;
+    bottom:5vh;
+}
+section div.content{
+    position: relative;
+    padding: auto 20px;
+    width: 95%;
+    justify-content: space-between;
+    opacity:0;
+    bottom:10vh;
+    transition: all .8s linear ;
+}
+section div.content h1{
+    font-weight: 800;
+    font-size: 300%;
+    margin: 0 0 5px;
+    text-shadow: 5px 7px 9px rgb(46, 90, 173);
+}
+section div.content p{
+    font-family: Helvetica;
+    font-weight: 100;
+    font-size: 100%;
+    margin:0;
+}
+section div.content a{
+    border: 2px solid #fff;
+    display: inline-block;
+    padding: 20px 60px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 25px;
+    position:relative;
+}
+section div.content a:before{
+    content:'';
+    display: block;
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    height:0;
+    transition: height 0.3s ease-in-out;
+    background-color:white;
+}
+section div.content a:hover:before{
+    height:100%;
+    top:initial;
+    bottom:0;
+}
+section div.content a span{
+    position: relative;
+    z-index: 1;
+    transition:color .3s ease-in-out;
+}
+section div.content a:hover span{
+    color:#000;
+}
+
+#about .content{
+    text-align: right;
+}
